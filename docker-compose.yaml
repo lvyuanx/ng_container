@@ -20,6 +20,9 @@ services:
       # 网站目录
       - ./html:/usr/share/nginx/html:ro
 
+      # 网站数据目录
+      - /data:/data:ro
+
       # 日志
       - ./logs:/var/log/nginx
 
