@@ -1,0 +1,16 @@
+# Logs
+logs/
+*.log
+
+# Runtime files
+pid/
+*.pid
+*.pid.lock
+
+# Nginx configs and html assets (ignored per request)
+nginx/conf.d/*
+nginx/html/*
+
+# OS metadata
+.DS_Store
+Thumbs.db
