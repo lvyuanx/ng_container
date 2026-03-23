@@ -15,4 +15,4 @@ nginx/html/*
 .DS_Store
 Thumbs.db
 
-.env
+docker-compose.extra-ports.yaml
