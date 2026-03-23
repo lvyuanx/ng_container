@@ -1,16 +1,22 @@
 version: "3.9"
-
 services:
   nginx:
     image: nginx:latest
     container_name: nginx-server
     restart: always
 
+    env_file:
+      - .env
+
     ports:
       - "80:80"
       - "443:443"
-      - "8000-9999:27000-28999"
 
+      # 额外端口映射，格式与 compose ports 相同
+      # 单个端口示例：EXTRA_PORTS=8701:27001
+      # 连续端口区间：EXTRA_PORTS=8000-8099:27000-27099  # 宿主区间对应容器区间
+      # 多个不连续端口：EXTRA_PORTS=8701:27001,8801:28001,9000-9002:29000-29002
+      - "${EXTRA_PORTS}"
 
     volumes:
       # 主配置
