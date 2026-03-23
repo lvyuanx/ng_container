@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>页面未找到 · 404</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: radial-gradient(circle at 15% 20%, #4f46e5 0, transparent 28%),
+                   radial-gradient(circle at 80% 10%, #22c55e 0, transparent 26%),
+                   radial-gradient(circle at 25% 85%, #f97316 0, transparent 24%),
+                   #0f172a;
+            --card: rgba(15, 23, 42, 0.72);
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --border: rgba(226, 232, 240, 0.08);
+            --accent: #38bdf8;
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: var(--bg);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            color: var(--text);
+            padding: 24px;
+        }
+        .card {
+            width: min(720px, 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--card);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            backdrop-filter: blur(12px);
+            text-align: center;
+        }
+        .code {
+            font-size: clamp(48px, 12vw, 88px);
+            letter-spacing: -4px;
+            margin: 0 0 4px;
+        }
+        .subtitle { margin: 0 0 12px; color: var(--muted); font-size: 16px; }
+        .hint { margin: 0 0 20px; color: var(--muted); }
+        footer { margin-top: 18px; color: var(--muted); font-size: 13px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="code">404</div>
+        <div class="subtitle">Oops，页面走丢了</div>
+        <p class="hint">请求的资源不存在或已被移除。请检查链接是否正确，或返回首页。</p>
+        <footer>Powered by Nginx · Docker</footer>
+    </div>
+</body>
+</html>
