@@ -28,8 +28,8 @@ services:
       - ./certs:/etc/nginx/certs:ro
 
     networks:
-      - nginx-net
+      - app-network
 
 networks:
-  nginx-net:
+  app-network:
     driver: bridge
