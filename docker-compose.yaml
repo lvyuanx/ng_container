@@ -32,4 +32,5 @@ services:
 
 networks:
   app-network:
+    name: app-network
     driver: bridge
