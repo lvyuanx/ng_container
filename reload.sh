@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd "$(dirname "$0")"
-ENV_OPT=()
+
+ENV_OPTS=()
 if [ -f ./.env ]; then
-  ENV_OPT=(--env-file .env)
+  ENV_OPTS=(--env-file .env)
   set -a; . ./.env; set +a
 fi
 
@@ -12,4 +13,4 @@ if [ -n "${EXTRA_PORTS:-}" ]; then
   COMPOSE_FILES+=(-f docker-compose.extra-ports.yaml)
 fi
 
-docker compose "${COMPOSE_FILES[@]}" "${ENV_OPT[@]}" exec nginx nginx -s reload
+docker compose "${COMPOSE_FILES[@]}" "${ENV_OPTS[@]}" exec nginx nginx -s reload
